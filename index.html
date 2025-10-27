@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnecTED - Your Reliable Tech Partner</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-blue': '#0A2A4E',   // Dark Navy (Trust, Corporate)
+              'primary-accent': '#00BFFF', // Bright Cyan (Modern, Tech)
+              'primary-text': '#1D2C38',   // Dark Charcoal (Professional Text)
+              'light-bg': '#F4F7F9',      // Light Grey (Section backgrounds)
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              display: ['Montserrat', 'system-ui', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+</head>
+<body class="font-sans text-primary-text">
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+    
+        // *** NEW *** Import React hooks for state and effects
+        const { useState, useEffect, useRef } = React;
+
+        // *** NEW *** Component to handle scroll animations
+        function AnimateOnScroll({ children }) {
+          const [isVisible, setIsVisible] = useState(false);
+          const domRef = useRef();
+
+          useEffect(() => {
+            const observer = new IntersectionObserver(entries => {
+              if (entries[0].isIntersecting) {
+                setIsVisible(true);
+                // Stop observing after it's visible
+                observer.unobserve(domRef.current);
+              }
+            });
+
+            observer.observe(domRef.current);
+
+            return () => {
+              if (domRef.current) {
+                observer.unobserve(domRef.current);
+              }
+            };
+          }, []);
+
+          return (
+            <div 
+              ref={domRef} 
+              className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+            >
+              {children}
+            </div>
+          );
+        }
+
+        // --- 1. Header Component (*** UPDATED ***) ---
+        function Header() {
+          // *** NEW *** State for mobile menu
+          const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+          return (
+            <header class="bg-white shadow-sm sticky top-0 z-50">
+              {/* *** NEW *** Added 'relative' for dropdown positioning */}
+              <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+                
+                {/* Your Logo */}
+                <a href="#home" class="flex items-center gap-3"> {/* Use gap for spacing */}
+  
+                  <div class="h-10 w-10 shrink-0 rotate-45 overflow-hidden rounded-lg">
+                   <img 
+                    src="images/Logo.png" 
+                    alt="ConnecTED Logo" 
+                    class="h-full w-full object-cover -rotate-45 scale-[1.42]" 
+                   />
+                  </div>
+
+                 <span class="font-bold text-2xl text-[#0A2A4E]">ConnecTED</span>
+
+                </a>
+
+                <div class="hidden md:flex space-x-8">
+                  <a href="#home" class="text-gray-600 hover:text-primary-blue font-medium">Home</a>
+                  <a href="#about" class="text-gray-600 hover:text-primary-blue font-medium">About</a>
+                  <a href="#services" class="text-gray-600 hover:text-primary-blue font-medium">Services</a>
+                  <a href="#portfolio" class="text-gray-600 hover:text-primary-blue font-medium">Portfolio</a>
+                  <a href="#contact" class="text-gray-600 hover:text-primary-blue font-medium">Contact</a>
+                </div>
+                
+                <a 
+                  href="#contact.html#quote" 
+                  class="hidden md:block bg-primary-accent text-white px-5 py-2 rounded-full font-semibold hover:bg-cyan-600 transition duration-300"
+                >
+                  Request a Quote
+                </a>
+                
+                {/* --- *** UPDATED *** Mobile Menu Button --- */}
+                <div class="md:hidden">
+                  <button 
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label="Toggle menu"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      {isMobileMenuOpen ? (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                      ) : (
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                      )}
+                    </svg>
+                  </button>
+                </div>
+              </nav>
+
+              {/* --- *** NEW *** Mobile Menu Dropdown --- */}
+              <div 
+                className={`md:hidden transition-all duration-300 ease-out absolute top-full left-0 w-full bg-white shadow-lg overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+              >
+                <a href="#home" class="block px-6 py-4 text-gray-600 hover:bg-light-bg" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                <a href="#about" class="block px-6 py-4 text-gray-600 hover:bg-light-bg" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+                <a href="#services" class="block px-6 py-4 text-gray-600 hover:bg-light-bg" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
+                <a href="#portfolio" class="block px-6 py-4 text-gray-600 hover:bg-light-bg" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</a>
+                <a href="#contact" class="block px-6 py-4 text-gray-600 hover:bg-light-bg" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+                <a href="#contact" class="block px-6 py-4 text-primary-accent font-semibold hover:bg-light-bg" onClick={() => setIsMobileMenuOpen(false)}>Request a Quote</a>
+              </div>
+            </header>
+          );
+        }
+
+        // --- 2. Hero Section ---
+        function HeroSection() {
+          return (
+            <section id="home" class="bg-white py-24 md:py-32">
+              <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold font-display text-primary-text mb-5">
+                  Turn Your Ideas Into Reality.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
+                  ConnecTED delivers timely, reliable tech solutions that automate your work and grow your business. From custom software to high-performance apps, we are your partners in innovation.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                  <a 
+                    href="contact.html#quote" 
+                    class="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 transition duration-300 transform hover:scale-105"
+                  >
+                    Request a Quote
+                  </a>
+                  <a 
+                    href="contact.html" 
+                    class="bg-gray-200 text-primary-text px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300 transform hover:scale-105"
+                  >
+                    Schedule a Consultation
+                  </a>
+                </div>
+              </div>
+            </section>
+          );
+        }
+
+        // --- 3. Services Overview Section (*** UPDATED ***) ---
+        function ServicesOverview() {
+          const services = [
+            { title: "Custom Software Development", desc: "Build the exact tool you need. We create scalable, secure, and efficient software tailored to your unique business processes.",link: "software-development.html" },
+            { title: "Web Development", desc: "From professional corporate sites to complex web applications, we build modern digital experiences that engage your audience.",link: "web-development.html" },
+            { title: "App Development (iOS & Android)", desc: "Reach your customers wherever they are. We design and develop high-performance native and cross-platform mobile applications.",link: "app-development.html" },
+            { title: "Tech Consulting & Solutions", desc: "Facing a complex tech problem? Our experts provide the strategic guidance and practical solutions to solve your toughest challenges.",link: "consulting.html" }
+          ];
+
+          return (
+            <section id="services" class="bg-light-bg py-20">
+              <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold font-display text-center text-primary-text mb-4">
+                  Our Core Solutions
+                </h2>
+                <p class="text-lg text-center text-gray-700 mb-12">
+                  We provide the end-to-end technical expertise you need to succeed.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {services.map((service) => (
+                    // *** NEW *** Added hover:shadow-xl, hover:-translate-y-1, and transition
+                    <div 
+                      class="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:shadow-xl hover:-translate-y-1" 
+                      key={service.title}
+                    >
+                      <h3 class="text-xl font-semibold font-display text-primary-blue mb-3">{service.title}</h3>
+                      <p class="text-gray-600 mb-4">{service.desc}</p>
+                      <a href={service.link} class="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">
+                        Learn More &rarr;
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          );
+        }
+
+        // --- 4. USP (Unique Selling Prop) Section ---
+        function UspSection() {
+          return (
+            <section id="about" class="bg-primary-blue text-white py-20">
+              <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold font-display mb-4">
+                  Your Timely & Reliable Tech Partner
+                </h2>
+                <p class="text-lg text-gray-200 max-w-3xl mx-auto">
+                  In today's market, speed and dependability are not optional. We built ConnecTED on a foundation of trust. We respect your deadlines, communicate clearly, and deliver robust solutions that work from day one. Your vision is our blueprint, and your timeline is our commitment.
+                </p>
+              </div>
+            </section>
+          );
+        }
+
+        // --- 5. Target Audience Section ---
+        function TargetAudience() {
+          const audiences = [
+            { title: "Small Businesses", desc: "Scale your operations with custom tools that automate tasks and unlock new growth." },
+            { title: "Food Industries", desc: "From supply chain to customer apps, we understand the unique tech needs of the food sector." },
+            { title: "Non-Profits", desc: "Maximize your impact with streamlined systems and professional web platforms." }
+          ];
+
+          return (
+            <section class="bg-white py-20">
+              <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold font-display text-center text-primary-text mb-4">
+                  Solutions for Ambitious Organizations
+                </h2>
+                <p class="text-lg text-center text-gray-700 mb-12">
+                  We specialize in helping organizations that need a reliable partner to handle their technology.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                  {audiences.map((aud) => (
+                    // *** NEW *** Added hover effect to audience cards
+                    <div 
+                      class="bg-light-bg p-8 rounded-lg text-center transition duration-300 hover:shadow-lg" 
+                      key={aud.title}
+                    >
+                      <h3 class="text-xl font-semibold font-display text-primary-blue mb-3">{aud.title}</h3>
+                      <p class="text-gray-600">{aud.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          );
+        }
+
+        // --- 6. Portfolio Teaser Section ---
+        function PortfolioTeaser() {
+          return (
+            <section id="portfolio" class="bg-light-bg py-20">
+              <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold font-display text-primary-text mb-4">
+                  See Our Work in Action
+                </h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+                  We don't just build solutions; we build results. Explore our case studies to see how we've helped businesses like yours transform their ideas into reality.
+                </p>
+                <a 
+                  href="portfolio.html" 
+                  class="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 transition duration-300 transform hover:scale-105"
+                >
+                  View Our Portfolio
+                </a>
+              </div>
+            </section>
+          );
+        }
+
+        // --- 7. Final CTA Section ---
+        function FinalCta() {
+          return (
+            <section id="contact" class="bg-white py-20">
+              <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold font-display text-primary-text mb-4">
+                  Let's Build Your Next Big Idea.
+                </h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+                  Ready to start your project? Get a detailed quote or schedule a free, no-obligation consultation with our team.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                  <a 
+                    href="contact.html#quote" 
+                    class="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 transition duration-300 transform hover:scale-105"
+                  >
+                    Request a Quote
+                  </a>
+                  <a 
+                    href="contact.html" 
+                    class="bg-gray-200 text-primary-text px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300 transform hover:scale-105"
+                  >
+                    Schedule a Consultation
+                  </a>
+                </div>
+              </div>
+            </section>
+          );
+        }
+
+        // --- 8. Footer Component ---
+        // --- 8. Footer Component (*** UPDATED WITH SOCIALS ***) ---
+        function Footer() {
+          
+          // --- SVG Icons (Sized for the footer) ---
+          const LinkedInIcon = () => (
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+            </svg>
+          );
+          
+          const InstagramIcon = () => (
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.053 1.903.218 2.457.42c.626.24 1.13.515 1.634.996.505.48.77 1.004.997 1.634.202.554.368 1.287.42 2.457.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.053 1.17-.218 1.903-.42 2.457-.24.626-.515 1.13-.996 1.634-.48.505-1.004.77-1.634.996-.554.202-1.287.368-2.457.42-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.053-1.903-.218-2.457-.42c-.626-.24-1.13-.515-1.634-.996-.505-.48-.77-1.004-.997-1.634-.202-.554-.368-1.287-.42-2.457-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.053-1.17.218 1.903.42-2.457.24-.626.515-1.13.996-1.634.48-.505 1.004.77 1.634.996.554.202 1.287.368 2.457.42 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.356.06-2.327.248-3.148.55-1.093.402-1.9.96-2.713 1.77C.36 3.96.168 4.77.072 5.92c-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.06 1.356.248 2.327.55 3.148.402 1.093.96 1.9 1.77 2.713.812.812 1.62.99 2.713 1.77.82.302 1.79.49 3.148.55 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.356-.06 2.327-.248 3.148-.55 1.093-.402 1.9-.96 2.713-1.77.812-.812 1.62.99 2.713-1.77.82-.302 1.79-.49 3.148.55 1.28-.058 1.688.072 4.947.072s3.667.014 4.947-.072c1.356-.06 2.327-.248 3.148-.55 1.093-.402 1.9-.96 2.713-1.77.812-.812 1.62.99 2.713-1.77.82-.302 1.79-.49 3.148-.55 1.28-.058 1.688.072 4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44s-1.44-.645-1.44-1.44.646-1.44 1.44-1.44 1.44.645 1.44 1.44z" />
+            </svg>
+          );
+          
+          const TikTokIcon = () => (
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-1.06-.63-1.9-1.48-2.5-2.55s-.87-2.38-.91-3.72c-.03-1.49-.01-2.98-.01-4.47h4.03c.01 1.45.02 2.9.01 4.35.01 1.09.38 2.15 1.19 2.94 1.03 1.02 2.52 1.29 3.91 1.01.8-.17 1.5-.59 2.04-1.19.43-.51.66-1.13.76-1.81.01-1.05.01-2.1.01-3.15v-7.68c-1.12.26-2.2.33-3.33.26-1.12-.08-2.2-.36-3.19-.89-1.18-.62-2.14-1.54-2.82-2.69C2.79 3.66 2.47 2.22 2.45.78l4.03.01c.01 1.23.28 2.42.79 3.5.54 1.13 1.3 2.11 2.27 2.87.01-.01.01-1.52.01-3.04.01-2.3.01-4.6-.01-6.9.01-.01 0 .01 0 0z" />
+            </svg>
+          );
+
+          return (
+            <footer class="bg-primary-blue text-gray-300 py-16">
+              <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-4 gap-8">
+                  
+                  {/* Column 1: Brand & Socials */}
+                  <div>
+                    <h3 class="text-2xl font-bold font-display text-white mb-3">ConnecTED</h3>
+                    <p class="text-gray-400 mb-4">Your timely & reliable tech partner.</p>
+                    
+                    {/* --- NEW SOCIAL LINKS --- */}
+                    <div class="flex space-x-4">
+                      <a 
+                        href="[YOUR_LINKEDIN_URL]" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-gray-400 hover:text-white transition duration-300" 
+                        aria-label="LinkedIn"
+                      >
+                        <LinkedInIcon />
+                      </a>
+                      <a 
+                        href="[https://www.instagram.com/connected0.1/]" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-gray-400 hover:text-white transition duration-300" 
+                        aria-label="Instagram"
+                      >
+                        <InstagramIcon />
+                      </a>
+                      <a 
+                        href="[YOUR_TIKTOK_URL]" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-gray-400 hover:text-white transition duration-300" 
+                        aria-label="TikTok"
+                      >
+                        <TikTokIcon />
+                      </a>
+                    </div>
+                    {/* --- END SOCIAL LINKS --- */}
+
+                  </div>
+                  
+                  {/* Column 2: Services */}
+                  <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Services</h4>
+                    <ul class="space-y-2">
+                      {/* --- UPDATED Links to point to correct pages --- */}
+                      <li><a href="software-development.html" class="hover:text-white">Custom Software</a></li>
+                      <li><a href="web-development.html" class="hover:text-white">Web Development</a></li>
+                      <li><a href="app-development.html" class="hover:text-white">App Development</a></li>
+                      <li><a href="consulting.html" class="hover:text-white">Tech Consulting</a></li>
+                    </ul>
+                  </div>
+                  
+                  {/* Column 3: Company */}
+                  <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Company</h4>
+                    <ul class="space-y-2">
+                      {/* --- UPDATED Links to point to correct pages --- */}
+                      <li><a href="index.html#about" class="hover:text-white">About Us</a></li>
+                      <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
+                      <li><a href="#" class="hover:text-white">Blog (Coming Soon)</a></li>
+                      <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                  </div>
+                  
+                  {/* Column 4: Contact */}
+                  <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Get in Touch</h4>
+                    <ul class="space-y-2">
+                      <li>demo.contact@connected.tech</li>
+                      <li>(123) 456-7890</li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="text-center text-gray-500 border-t border-gray-700 mt-10 pt-8">
+                  © {new Date().getFullYear()} ConnecTED. All rights reserved.
+                </div>
+              </div>
+            </footer>
+          );
+        }
+
+        // --- Main App Component (*** UPDATED ***) ---
+        function App() {
+          return (
+            <div>
+              <Header />
+              <main>
+                {/* Hero is visible on load, so no animation */}
+                <HeroSection /> 
+                
+                {/* *** NEW *** Wrap sections in AnimateOnScroll */}
+                <AnimateOnScroll>
+                  <ServicesOverview />
+                </AnimateOnScroll>
+                <AnimateOnScroll>
+                  <UspSection />
+                </AnimateOnScroll>
+                <AnimateOnScroll>
+                  <TargetAudience />
+                </AnimateOnScroll>
+                <AnimateOnScroll>
+                  <PortfolioTeaser />
+                </AnimateOnScroll>
+                <AnimateOnScroll>
+                  <FinalCta />
+                </AnimateOnScroll>
+              </main>
+              <Footer />
+            </div>
+          );
+        }
+
+        // --- Render the App to the #root element ---
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+
+    </script>
+</body>
+</html>
