@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Project Name] - ConnecTED Case Study</title>
+    <!-- 1. Title Updated -->
+    <title>Donor Management Portal - ConnecTED Case Study</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLTREBY8V1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-CLTREBY8V1');
+    </script>
 
     <script>
       tailwind.config = {
@@ -46,118 +57,141 @@
     <div id="react-root"></div>
 
     <main>
+        <!-- 2. Hero Section Updated -->
         <section class="bg-primary-blue text-white py-20">
             <div class="container mx-auto px-6 text-center">
                 
-                <span class="text-primary-accent font-semibold">[Client Name / Industry]</span>
+                <span class="text-primary-accent font-semibold">Non-Profit / Fundraising</span>
                 <h1 class="text-4xl md:text-5xl font-bold font-display mt-2">
-                    [Project Title: e.g., Automated Inventory System]
+                    Donor Management Portal
                 </h1>
                 
             </div>
         </section>
 
+        <!-- 3. Overview Section Updated -->
         <section class="py-20 bg-light-bg fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     
                     <div>
-                        <img src="https://via.placeholder.com/800x600.png?text=Main+Project+Screenshot" alt="Project Screenshot" class="rounded-lg shadow-2xl w-full">
+                        <img src="images/Donor.png" alt="Donor Portal Dashboard Screenshot" class="rounded-lg shadow-2xl w-full">
                     </div>
                     
                     <div>
                         <h2 class="text-3xl font-bold font-display text-primary-text mb-4">Project Overview</h2>
                         
                         <p class="text-lg text-gray-700 mb-6">
-                            [A brief 2-3 sentence summary of the entire project. What was the goal and what was the outcome?]
+                            This project is a comprehensive web application designed for non-profit organizations to efficiently manage their donors, track donations, and visualize fundraising progress. The goal was to replace scattered spreadsheets with a single, reliable source of truth.
                         </p>
                         
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <h4 class="text-sm font-semibold text-gray-600 uppercase">Client</h4>
-                                <p class="text-lg font-semibold text-primary-blue">[Client Name]</p>
+                                <p class="text-lg font-semibold text-primary-blue">Pro-Bono Portfolio Project</p>
                             </div>
                             <div>
                                 <h4 class="text-sm font-semibold text-gray-600 uppercase">Industry</h4>
-                                <p class="text-lg font-semibold text-primary-blue">[e.g., Food Industry]</p>
+                                <p class="text-lg font-semibold text-primary-blue">Non-Profit & Fundraising</p>
                             </div>
                             <div>
                                 <h4 class="text-sm font-semibold text-gray-600 uppercase">Services</h4>
-                                <p class="text-lg font-semibold text-primary-blue">[e.g., Custom Software, Tech Consulting]</p>
+                                <p class="text-lg font-semibold text-primary-blue">Frontend Development, UI/UX</p>
                             </div>
                             <div>
                                 <h4 class="text-sm font-semibold text-gray-600 uppercase">Year</h4>
-                                <p class="text-lg font-semibold text-primary-blue">[e.g., 2024]</p>
+                                <p class="text-lg font-semibold text-primary-blue">2025</p>
                             </div>
                         </div>
-                    </div>
+
+                        <a 
+                          href="https://donor-portal.vercel.app/" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          class="inline-block mt-8 bg-gray-200 text-primary-text px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300 transform hover:scale-105"
+                        >
+                          View Live Project
+                        </a>
+                        </div>
                 </div>
             </div>
         </section>
 
+        <!-- 4. Challenge Section Updated -->
         <section class="py-20 bg-white fade-in-section">
             <div class="container mx-auto px-6 max-w-4xl">
                 <h2 class="text-3xl font-bold font-display text-primary-text text-center mb-6">The Challenge</h2>
                 
                 <p class="text-xl text-gray-700 leading-relaxed text-center">
-                    [Describe the client's problem in detail. What wasn't working? What pain points were they experiencing? Why did they need you? Go into a little detail here.]
+                    Non-profit organizations, especially smaller ones, often rely on disjointed tools spreadsheets, email lists, and paper records to manage donor relationships and track contributions.
                 </p>
                 <p class="text-xl text-gray-700 leading-relaxed text-center mt-4">
-                    [For example: "The client was manually tracking all inventory in 5 different spreadsheets, leading to daily stock-outs, costly ordering errors, and 20+ hours of wasted time per week."]
+                    This leads to inefficient data entry, a high risk of errors, missed follow-up opportunities, and a complete lack of real-time insight into fundraising campaign performance.
                 </p>
             </div>
         </section>
         
+        <!-- 5. Solution Section Updated -->
         <section class="py-20 bg-light-bg fade-in-section">
             <div class="container mx-auto px-6 max-w-4xl">
                 <h2 class="text-3xl font-bold font-display text-primary-text text-center mb-6">The Solution</h2>
                 
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
-                    [Describe what you built. How did you approach the problem? What technologies did you use, and why? Be specific about the features you implemented.]
+                    We developed a secure, responsive frontend application using React and Tailwind CSS. The portal features a central dashboard with key metrics, a searchable database for all donors, and detailed profiles for each donor showing their complete giving history.
                 </p>
                 <p class="text-xl text-gray-700 leading-relaxed">
-                    [For example: "ConnecTED designed and developed a custom, centralized web application built with React and Node.js. We created a barcode scanning module that allowed warehouse staff to update inventory in real-time from their phones. We also integrated the system directly with their accounting software via an API, automating the entire purchase order process."]
+                    Staff can log new donations (using mock data in this frontend-only build), track campaign goals, and view recent activity in one place. The system was designed with a clean, intuitive UI to ensure rapid adoption with minimal training.
                 </p>
             </div>
         </section>
 
+        <!-- 6. Results Section UPDATED to "Features" -->
         <section class="py-20 bg-primary-blue text-white fade-in-section">
             <div class="container mx-auto px-6 text-center max-w-4xl">
-                <h2 class="text-3xl font-bold font-display mb-6">The Results</h2>
+                <h2 class="text-3xl font-bold font-display mb-6">Features at a Glance</h2>
                 
                 <p class="text-xl text-gray-200 leading-relaxed mb-10">
-                    [This is the most important part. Show the impact. Use numbers and clear, strong statements.]
+                    The portal provides a clean, data-centric interface for managing all aspects of donor relations.
                 </p>
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <div>
-                        <span class="text-5xl font-bold font-display text-primary-accent">95%</span>
-                        <p class="text-lg text-gray-200 mt-2">Reduction in data entry errors</p>
+                        <span class="text-5xl font-bold font-display text-primary-accent">Dashboard</span>
+                        <p class="text-lg text-gray-200 mt-2">At-a-glance dashboard with key metrics: total revenue, average donation, and total donors.</p>
                     </div>
                     <div>
-                        <span class="text-5xl font-bold font-display text-primary-accent">40%</span>
-                        <p class="text-lg text-gray-200 mt-2">Increase in order fulfillment speed</p>
+                        <span class="text-5xl font-bold font-display text-primary-accent">Donors</span>
+                        <p class="text-lg text-gray-200 mt-2">Full CRUD (Create, Read, Update) functionality for managing detailed donor profiles.</p>
                     </div>
                     <div>
-                        <span class="text-5xl font-bold font-display text-primary-accent">20+</span>
-                        <p class="text-lg text-gray-200 mt-2">Hours saved per week on manual tasks</p>
+                        <span class="text-5xl font-bold font-display text-primary-accent">Tracking</span>
+                        <p class="text-lg text-gray-200 mt-2">Live-searchable history of all donations, linked to donors and specific campaigns.</p>
                     </div>
                 </div>
 
+                <!-- 7. Testimonial Section UPDATED to "Tech Stack" -->
                 <div class="mt-16 border-t border-gray-700 pt-10">
-                    <blockquote class="text-2xl italic text-gray-200 max-w-3xl mx-auto">
-                        "Working with ConnecTED was a game-changer. Their solution was timely, reliable, and has fundamentally improved how we do business."
-                    </blockquote>
-                    <p class="text-lg font-semibold text-white mt-6">
-                        - [Client Name], [Client Title]
-                    </p>
+                    <h3 class="text-2xl font-semibold text-white mb-6">Technology Stack</h3>
+                    <div class="max-w-md mx-auto text-lg text-gray-200 grid grid-cols-2 gap-4 text-left">
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>React.js</li>
+                            <li>Vite</li>
+                            <li>React Hooks (useState)</li>
+                        </ul>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Tailwind CSS</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Lucide React (Icons)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
         
+        <!-- 8. Navigation Links Updated -->
         <section class="py-10 bg-light-bg border-t border-gray-200">
             <div class="container mx-auto px-6 flex justify-between">
-                <a href="[link-to-previous-project.html]" class="font-semibold text-gray-600 hover:text-primary-blue transition duration-300">
+                <a href="case-study-inventory.html" class="font-semibold text-gray-600 hover:text-primary-blue transition duration-300">
                     &larr; Previous Project
                 </a>
                 <a href="[link-to-next-project.html]" class="font-semibold text-gray-600 hover:text-primary-blue transition duration-300">
@@ -166,6 +200,7 @@
             </div>
         </section>
         
+        <!-- CTA Section (Unchanged) -->
         <section id="contact" class="bg-white py-20 fade-in-section">
             <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold font-display text-primary-text mb-4">
@@ -195,6 +230,7 @@
     <div id="footer-root"></div>
 
 
+    <!-- React & Animation Scripts (Unchanged) -->
     <script type="text/babel">
         const { useState } = React;
 
@@ -251,8 +287,7 @@
           );
         }
 
-        // --- 2. Footer Component (Copied from other pages) ---
-        // --- 8. Footer Component (*** UPDATED WITH SOCIALS ***) ---
+        // --- 2. Footer Component (Unchanged) ---
         function Footer() {
           
           // --- SVG Icons (Sized for the footer) ---
@@ -264,7 +299,7 @@
           
           const InstagramIcon = () => (
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.053 1.903.218 2.457.42c.626.24 1.13.515 1.634.996.505.48.77 1.004.997 1.634.202.554.368 1.287.42 2.457.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.053 1.17-.218 1.903-.42 2.457-.24.626-.515 1.13-.996 1.634-.48.505-1.004.77-1.634.996-.554.202-1.287.368-2.457.42-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.053-1.903-.218-2.457-.42c-.626-.24-1.13-.515-1.634-.996-.505-.48-.77-1.004-.997-1.634-.202-.554-.368-1.287-.42-2.457-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.053-1.17.218 1.903.42-2.457.24-.626.515-1.13.996-1.634.48-.505 1.004.77 1.634.996.554.202 1.287.368 2.457.42 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.356.06-2.327.248-3.148.55-1.093.402-1.9.96-2.713 1.77C.36 3.96.168 4.77.072 5.92c-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.06 1.356.248 2.327.55 3.148.402 1.093.96 1.9 1.77 2.713.812.812 1.62.99 2.713 1.77.82.302 1.79.49 3.148.55 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.356-.06 2.327-.248 3.148-.55 1.093-.402 1.9-.96 2.713-1.77.812-.812 1.62.99 2.713-1.77.82-.302 1.79-.49 3.148.55 1.28-.058 1.688.072 4.947.072s3.667.014 4.947-.072c1.356-.06 2.327-.248 3.148-.55 1.093-.402 1.9-.96 2.713-1.77.812-.812 1.62.99 2.713-1.77.82-.302 1.79-.49 3.148-.55 1.28-.058 1.688.072 4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44s-1.44-.645-1.44-1.44.646-1.44 1.44-1.44 1.44.645 1.44 1.44z" />
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.053 1.903.218 2.457.42c.626.24 1.13.515 1.634.996.505.48.77 1.004.997 1.634.202.554.368 1.287.42 2.457.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.053 1.17-.218 1.903-.42 2.457-.24.626-.515 1.13-.996 1.634-.48.505-1.004.77-1.634.996-.554.202-1.287.368-2.457.42-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.053-1.903-.218-2.457-.42c-.626-.24-1.13-.515-1.634-.996-.505-.48-.77-1.004-.997-1.634-.202-.554-.368-1.287-.42-2.457-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.053-1.17.218-1.903.42-2.457.24-.626.515-1.13.996-1.634.48-.505-1.004.77-1.634.996.554.202-1.287.368-2.457.42-1.266.058-1.646.07-4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.356.06-2.327.248-3.148.55-1.093.402-1.9.96-2.713 1.77C.36 3.96.168 4.77.072 5.92c-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.06 1.356.248 2.327.55 3.148.402 1.093.96 1.9 1.77 2.713.812.812 1.62.99 2.713 1.77.82.302 1.79.49 3.148.55 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.356-.06 2.327-.248 3.148-.55 1.093-.402 1.9-.96 2.713-1.77.812-.812 1.62.99 2.713-1.77.82-.302 1.79-.49 3.148.55 1.28-.058 1.688.072 4.947.072s3.667.014 4.947-.072c1.356-.06 2.327-.248 3.148-.55 1.093-.402 1.9-.96 2.713-1.77.812-.812 1.62.99 2.713-1.77.82-.302 1.79-.49 3.148.55 1.28-.058 1.688.072 4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44s-1.44-.645-1.44-1.44.646-1.44 1.44-1.44 1.44.645 1.44 1.44z" />
             </svg>
           );
           
@@ -284,7 +319,6 @@
                     <h3 class="text-2xl font-bold font-display text-white mb-3">ConnecTED</h3>
                     <p class="text-gray-400 mb-4">Your timely & reliable tech partner.</p>
                     
-                    {/* --- NEW SOCIAL LINKS --- */}
                     <div class="flex space-x-4">
                       <a 
                         href="[YOUR_LINKEDIN_URL]" 
@@ -314,7 +348,6 @@
                         <TikTokIcon />
                       </a>
                     </div>
-                    {/* --- END SOCIAL LINKS --- */}
 
                   </div>
                   
@@ -322,7 +355,6 @@
                   <div>
                     <h4 class="text-lg font-semibold text-white mb-3">Services</h4>
                     <ul class="space-y-2">
-                      {/* --- UPDATED Links to point to correct pages --- */}
                       <li><a href="software-development.html" class="hover:text-white">Custom Software</a></li>
                       <li><a href="web-development.html" class="hover:text-white">Web Development</a></li>
                       <li><a href="app-development.html" class="hover:text-white">App Development</a></li>
@@ -334,10 +366,9 @@
                   <div>
                     <h4 class="text-lg font-semibold text-white mb-3">Company</h4>
                     <ul class="space-y-2">
-                      {/* --- UPDATED Links to point to correct pages --- */}
                       <li><a href="index.html#about" class="hover:text-white">About Us</a></li>
                       <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
-                      <li><a href="#" class="hover:text-white">Blog (Coming Soon)</a></li>
+<li><a href="#" class="hover:text-white">Blog (Coming Soon)</a></li>
                       <li><a href="contact.html" class="hover:text-white">Contact</a></li>
                     </ul>
                   </div>
@@ -359,6 +390,7 @@
             </footer>
           );
         }
+
         // Mount the Header
         const headerRoot = ReactDOM.createRoot(document.getElementById('react-root'));
         headerRoot.render(<Header />);
