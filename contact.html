@@ -49,6 +49,8 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLTREBY8V1"></script>
     <script>
@@ -84,7 +86,7 @@
 
     <main class="py-20">
         <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-5xl font-bold font-display text-center mb-4">Let's Get Started</h1>
+            <h1 class="text-4xl md:text-5xl font-bold font-display text-center mb-4"><span id="typed-start"></span></h1>
             <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto text-center mb-16">
                 We're ready to help. Choose the option that works best for you.
             </p>
@@ -148,6 +150,20 @@
     
     <div id="footer-root"></div>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        if (window.Typed) {
+          new Typed('#typed-start', {
+            strings: ["Let's Get Started"],
+            typeSpeed: 60,
+            backSpeed: 0,
+            showCursor: false,
+            loop: false
+          });
+        }
+      });
+    </script>
+
 
     <script type="text/babel">
         const { useState } = React;
@@ -161,8 +177,11 @@
               <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
                 
                 {/* Link logo back to home */}
-                <a href="index.html" class="text-2xl font-bold font-display text-primary-blue">
-                  ConnecTED
+                <a href="index.html" class="flex items-center gap-3">
+                  <div class="h-10 w-10 shrink-0 rotate-45 overflow-hidden rounded-lg">
+                    <img src="images/Logo.png" alt="ConnecTED Logo" class="h-full w-full object-cover -rotate-45 scale-[1.42]" />
+                  </div>
+                  <span class="font-bold text-2xl text-[#0A2A4E]">ConnecTED</span>
                 </a>
                 
                 <div class="hidden md:flex space-x-8">
@@ -242,7 +261,7 @@
                     {/* --- NEW SOCIAL LINKS --- */}
                     <div class="flex space-x-4">
                       <a 
-                        href="[YOUR_LINKEDIN_URL]" 
+                        href="https://www.linkedin.com/company/your-company" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         class="text-gray-400 hover:text-white transition duration-300" 
@@ -251,7 +270,7 @@
                         <LinkedInIcon />
                       </a>
                       <a 
-                        href="[https://www.instagram.com/connected0.1/]" 
+                        href="https://www.instagram.com/connected0.1/" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         class="text-gray-400 hover:text-white transition duration-300" 
@@ -260,7 +279,7 @@
                         <InstagramIcon />
                       </a>
                       <a 
-                        href="[YOUR_TIKTOK_URL]" 
+                        href="https://www.tiktok.com/@yourprofile" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         class="text-gray-400 hover:text-white transition duration-300" 
@@ -301,8 +320,8 @@
                   <div>
                     <h4 class="text-lg font-semibold text-white mb-3">Get in Touch</h4>
                     <ul class="space-y-2">
-                      <li>demo.contact@connected.tech</li>
-                      <li>(123) 456-7890</li>
+                      <li>churchill4032@gmail.com</li>
+                      <li>(+254) 706-215407</li>
                     </ul>
                   </div>
 
