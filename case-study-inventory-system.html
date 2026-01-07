@@ -56,6 +56,14 @@
     <link rel="shortcut icon" href="public/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png" />
     <link rel="manifest" href="public/site.webmanifest" />
+    <meta name="theme-color" content="#0A2A4E" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <style>
+      .skip-link{clip:rect(1px,1px,1px,1px);position:absolute;height:1px;width:1px;overflow:hidden}
+      .skip-link:focus{clip:auto;position:fixed;left:1rem;top:1rem;height:auto;width:auto;background:#ffffff;padding:0.5rem;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.2);z-index:1000;color:#0A2A4E}
+    </style>
 
     <!-- 1. Title Updated -->
     <title>Automated Inventory System - ConnecTED Case Study</title>
@@ -107,6 +115,7 @@
     </style>
 </head>
 <body class="font-sans text-primary-text">
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
     <div id="react-root"></div>
 
@@ -127,7 +136,7 @@
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     
                     <div>
-                        <img src="https://via.placeholder.com/800x600.png?text=Inventory+Dashboard+Screenshot" alt="Inventory Dashboard Screenshot" class="rounded-lg shadow-2xl w-full">
+                        <img src="https://via.placeholder.com/800x600.png?text=Inventory+Dashboard+Screenshot" alt="Inventory Dashboard Screenshot" class="rounded-lg shadow-2xl w-full" loading="lazy">
                     </div>
                     
                     <div>
