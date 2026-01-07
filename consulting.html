@@ -39,6 +39,32 @@
     }
     </script>
 
+      <!-- BreadcrumbList for consulting page -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://get--connected.com"},
+          {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://get--connected.com/#services"},
+          {"@type": "ListItem", "position": 3, "name": "Tech Consulting & Solutions", "item": "https://get--connected.com/consulting"}
+        ]
+      }
+      </script>
+
+      <!-- FAQ JSON-LD for consulting page -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What is your consulting process?", "acceptedAnswer": {"@type": "Answer", "text": "We start with discovery, then roadmap, pilot implementation, and finally full roll-out with knowledge transfer."}},
+          {"@type": "Question", "name": "How long is a typical engagement?", "acceptedAnswer": {"@type": "Answer", "text": "Engagements vary; short advisory projects can be 2–4 weeks, while implementations often run 3–6 months."}},
+          {"@type": "Question", "name": "Do you help implement recommendations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we can provide hands-on implementation or hand off to your team with detailed guidance."}}
+        ]
+      }
+      </script>
+
     <link rel="shortcut icon" href="public/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png" />
     <link rel="manifest" href="public/site.webmanifest" />
@@ -175,6 +201,27 @@
                 </a>
             </div>
             </div>
+        </section>
+
+        <!-- FAQ Section (visible) -->
+        <section id="faq" class="py-12">
+          <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-2xl font-bold font-display text-primary-text mb-4">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-semibold">What is your consulting process?</h3>
+                <p class="text-gray-700">We begin with discovery, produce a roadmap, then implement a pilot followed by a full roll-out and knowledge transfer.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold">How long is a typical engagement?</h3>
+                <p class="text-gray-700">Short advisory engagements can be 2–4 weeks; larger implementations typically range 3–6 months.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold">Do you help implement recommendations?</h3>
+                <p class="text-gray-700">Yes — we can implement recommendations directly or work with your team to hand off solutions.</p>
+              </div>
+            </div>
+          </div>
         </section>
     </main>
     

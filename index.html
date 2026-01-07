@@ -31,6 +31,21 @@
     }
     </script>
 
+    <!-- WebSite + SearchAction (helps SERP sitelinks/searchbox) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://get--connected.com",
+      "name": "ConnecTED",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://get--connected.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <!-- Fallbacks for local/dev file serving (use `public/` folder when opened directly) -->
     <link rel="icon" type="image/png" href="public/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
