@@ -258,8 +258,18 @@
           return (
             <section
               id="home"
-              className="relative flex items-center justify-center min-h-[500px] md:min-h-[700px] lg:min-h-[80vh] bg-[url('/images/hero.jpg')] bg-cover bg-center"
+              className="relative flex items-center justify-center min-h-[500px] md:min-h-[700px] lg:min-h-[80vh]"
             >
+              {/* Decorative responsive hero image (keeps text accessible) */}
+              <img
+                src="images/hero-1200w.webp"
+                srcSet="images/hero-480w.webp 480w, images/hero-800w.webp 800w, images/hero-1200w.webp 1200w"
+                sizes="(max-width:640px) 100vw, 1200px"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover"
+                decoding="async"
+              />
               {/* --- ADDED: Background Overlay --- */}
               {/* This div sits on top of the bg image but behind the text */}
               {/* It darkens the image so white text is readable */}
