@@ -123,7 +123,7 @@
                         <span class="text-sm font-semibold text-primary-accent">Custom Software, Food Industry</span>
                         <h3 class="text-xl font-semibold font-display text-primary-blue my-2">Automated Inventory System</h3>
                         <p class="text-gray-600 mb-4">Developed a custom inventory tool for a regional food distributor to reduce waste and automate ordering.</p>
-                        <a href="case-study-inventory-system.html" class="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">
+                        <a href="case-study-inventory-system" class="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">
                             View Case Study &rarr;
                         </a>
                     </div>
@@ -135,7 +135,7 @@
                         <span class="text-sm font-semibold text-primary-accent">Web Development, Non-Profit</span>
                         <h3 class="text-xl font-semibold font-display text-primary-blue my-2">Donor Management Portal</h3>
                         <p class="text-gray-600 mb-4">Built a secure, easy-to-use web portal for a non-profit to manage donations and communicate with supporters.</p>
-                        <a href="case-study-donor-portal.html" class="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">
+                        <a href="case-study-donor-portal" class="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">
                             View Case Study &rarr;
                         </a>
                     </div>
@@ -177,13 +177,13 @@
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                   <a 
-                    href="contact.html#quote" 
+                    href="contact#quote" 
                     class="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 transition duration-300 transform hover:scale-105"
                   >
                     Request a Quote
                   </a>
                   <a 
-                    href="contact.html#schedule" 
+                    href="contact#schedule" 
                     class="bg-gray-200 text-primary-text px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300 transform hover:scale-105"
                   >
                     Schedule a Consultation
@@ -209,7 +209,7 @@
             <header class="bg-white shadow-sm sticky top-0 z-50">
               <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
                 
-                <a href="index.html" class="flex items-center gap-3">
+                <a href="/" class="flex items-center gap-3">
                   <div class="h-10 w-10 shrink-0 rotate-45 overflow-hidden rounded-lg">
                     <img src="images/Logo.png" alt="ConnecTED Logo" class="h-full w-full object-cover -rotate-45 scale-[1.42]" />
                   </div>
@@ -217,15 +217,15 @@
                 </a>
                 
                 <div class="hidden md:flex space-x-8">
-                  <a href="index.html" class="text-gray-600 hover:text-primary-blue font-medium">Home</a>
-                  <a href="index.html#about" class="text-gray-600 hover:text-primary-blue font-medium">About</a>
-                  <a href="index.html#services" class="text-gray-600 hover:text-primary-blue font-medium">Services</a>
-                  <a href="portfolio.html" class="text-primary-blue font-semibold">Portfolio</a> {/* <-- ACTIVE LINK */}
-                  <a href="contact.html" class="text-gray-600 hover:text-primary-blue font-medium">Contact</a>
+                  <a href="/" class="text-gray-600 hover:text-primary-blue font-medium">Home</a>
+                  <a href="/#about" class="text-gray-600 hover:text-primary-blue font-medium">About</a>
+                  <a href="/#services" class="text-gray-600 hover:text-primary-blue font-medium">Services</a>
+                  <a href="portfolio" class="text-primary-blue font-semibold">Portfolio</a> {/* <-- ACTIVE LINK */}
+                  <a href="contact" class="text-gray-600 hover:text-primary-blue font-medium">Contact</a>
                 </div>
                 
                 <a 
-                  href="contact.html#quote" 
+                  href="contact#quote" 
                   class="hidden md:block bg-primary-accent text-white px-5 py-2 rounded-full font-semibold hover:bg-cyan-600 transition duration-300"
                 >
                   Request a Quote
@@ -247,11 +247,11 @@
               <div 
                 className={`md:hidden transition-all duration-300 ease-out absolute top-full left-0 w-full bg-white shadow-lg overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
               >
-                <a href="index.html" class="block px-6 py-4 text-gray-600 hover:bg-light-bg">Home</a>
-                <a href="index.html#about" class="block px-6 py-4 text-gray-600 hover:bg-light-bg">About</a>
-                <a href="index.html#services" class="block px-6 py-4 text-gray-600 hover:bg-light-bg">Services</a>
-                <a href="portfolio.html" class="block px-6 py-4 text-primary-blue font-semibold hover:bg-light-bg">Portfolio</a>
-                <a href="contact.html" class="block px-6 py-4 text-gray-600 hover:bg-light-bg">Contact</a>
+                <a href="/" class="block px-6 py-4 text-gray-600 hover:bg-light-bg">Home</a>
+                <a href="/#about" class="block px-6 py-4 text-gray-600 hover:bg-light-bg">About</a>
+                <a href="/#services" class="block px-6 py-4 text-gray-600 hover:bg-light-bg">Services</a>
+                <a href="portfolio" class="block px-6 py-4 text-primary-blue font-semibold hover:bg-light-bg">Portfolio</a>
+                <a href="contact" class="block px-6 py-4 text-gray-600 hover:bg-light-bg">Contact</a>
               </div>
             </header>
           );
@@ -329,10 +329,10 @@
                     <h4 class="text-lg font-semibold text-white mb-3">Services</h4>
                     <ul class="space-y-2">
                       {/* --- UPDATED Links to point to correct pages --- */}
-                      <li><a href="software-development.html" class="hover:text-white">Custom Software</a></li>
-                      <li><a href="web-development.html" class="hover:text-white">Web Development</a></li>
-                      <li><a href="app-development.html" class="hover:text-white">App Development</a></li>
-                      <li><a href="consulting.html" class="hover:text-white">Tech Consulting</a></li>
+                      <li><a href="software-development" class="hover:text-white">Custom Software</a></li>
+                      <li><a href="web-development" class="hover:text-white">Web Development</a></li>
+                      <li><a href="app-development" class="hover:text-white">App Development</a></li>
+                      <li><a href="consulting" class="hover:text-white">Tech Consulting</a></li>
                     </ul>
                   </div>
                   
@@ -341,10 +341,10 @@
                     <h4 class="text-lg font-semibold text-white mb-3">Company</h4>
                     <ul class="space-y-2">
                       {/* --- UPDATED Links to point to correct pages --- */}
-                      <li><a href="index.html#about" class="hover:text-white">About Us</a></li>
-                      <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
+                      <li><a href="/#about" class="hover:text-white">About Us</a></li>
+                      <li><a href="portfolio" class="hover:text-white">Portfolio</a></li>
                       <li><a href="#" class="hover:text-white">Blog (Coming Soon)</a></li>
-                      <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                      <li><a href="contact" class="hover:text-white">Contact</a></li>
                     </ul>
                   </div>
                   
