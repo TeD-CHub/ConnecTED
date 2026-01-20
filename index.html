@@ -50,11 +50,11 @@
     </script>
 
   <!-- Fallbacks for local/dev file serving (use `public/` folder when opened directly) -->
-  <link rel="icon" type="image/png" href="public/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
-  <link rel="shortcut icon" href="public/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png" />
-  <link rel="manifest" href="public/site.webmanifest" />
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="canonical" href="https://get--connected.com" />
   <meta name="theme-color" content="#0A2A4E" />
   <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -226,9 +226,9 @@
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {isMobileMenuOpen ? (
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    <path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                   ) : (
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
                   )}
                 </svg>
               </button>
@@ -344,25 +344,25 @@
 
     // --- NEW: SVG Icon Components for Services ---
     const LaptopCodeIcon = () => (
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="40px" width="40px" xmlns="http://www.w3.org/2000/svg">
+      <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 576 512" height="40px" width="40px" xmlns="http://www.w3.org/2000/svg">
         <path d="M528 48H48c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h176v32h-64c-8.836 0-16 7.164-16 16s7.164 16 16 16h192c8.836 0 16-7.164 16-16s-7.164-16-16-16h-64v-32h176c26.51 0 48-21.49 48-48V96c0-26.51-21.49-48-48-48zm-16 320H64V112h448v256zM245.85 164.88c-6.27-6.17-16.42-6.09-22.6.19l-64 64c-6.25 6.25-6.25 16.38 0 22.63l64 64c6.18 6.27 16.33 6.35 22.6.19 6.27-6.17 6.35-16.33.19-22.6L192.43 256l53.6-53.51c6.17-6.27 6.09-16.42-.18-22.61zm86.3 107.02c6.27 6.17 16.42 6.09 22.6-.19l64-64c6.25-6.25 6.25-16.38 0-22.63l-64-64c-6.18-6.27-16.33-6.35-22.6-.19-6.27 6.17-6.35 16.33-.19 22.6L384.57 256l-53.6 53.51c-6.17 6.27-6.09 16.42.18 22.61z"></path>
       </svg>
     );
 
     const CodeIcon = () => (
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="40px" width="40px" xmlns="http://www.w3.org/2000/svg">
+      <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 640 512" height="40px" width="40px" xmlns="http://www.w3.org/2000/svg">
         <path d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.2-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"></path>
       </svg>
     );
 
     const MobileIcon = () => (
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="40px" width="40px" xmlns="http://www.w3.org/2000/svg">
+      <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 384 512" height="40px" width="40px" xmlns="http://www.w3.org/2000/svg">
         <path d="M320 0H64C28.65 0 0 28.65 0 64v384c0 35.35 28.65 64 64 64h256c35.35 0 64-28.65 64-64V64c0-35.35-28.65-64-64-64zM192 480c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm160-96H32V64h320v320z"></path>
       </svg>
     );
 
     const ConsultingIcon = () => (
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="40px" width="40px" xmlns="http://www.w3.org/2000/svg">
+      <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 640 512" height="40px" width="40px" xmlns="http://www.w3.org/2000/svg">
         <path d="M512.2 160.1C494.3 147.9 473 144 448 144c-16.7 0-33 1.8-48.3 5.1l-10.4-31.1C384.4 97.4 366.1 80 343 80c-8 0-15.8 1.8-22.8 5.1l-9.1-27.2C305.2 41.8 288.1 32 268.4 32c-12.4 0-24.1 3.5-34.1 9.9L101 133.3c-13.8 8.9-22 23.4-22 39.2v105.1c0 14.7 9.8 28 23.8 31.8l27.1 7.2c-2.3 5.8-3.7 12-4.6 18.3l-31.1 10.4c-14.7 4.9-23.8 18.9-23.8 34.3v42.1c0 13.1 8 24.9 20.1 29.8l10.7 4.4c-4.4 7.6-7.3 16-8.7 24.8l-31.1 10.4c-14.7 4.9-23.8 18.9-23.8 34.3v13.3C48 488.5 59.5 500 72.8 500h10.4c13.3 0 24.1-11.5 24.1-24.8v-13.3c0-13-8-24.8-20.1-29.8l-10.7-4.4c4.4-7.6 7.3-16 8.7-24.8l31.1-10.4c14.7-4.9 23.8-18.9 23.8-34.3v-42.1c0-13.1-8-24.9-20.1-29.8l-10.7-4.4c4.4-7.6 7.3-16 8.7-24.8l31.1-10.4c14.7-4.9 23.8-18.9 23.8-34.3V247.9c0-9.8-5-18.9-13.4-24.2l-31.1-19.3c8.8-12.3 14.8-26.4 17.7-41.5l23.5 7.8c13.8 4.6 28.3-2.9 32.9-16.7l23.5-69.8c8.8-26.1 35.9-42.1 62-33.2l23.5 7.8c12 4 25.4-0.4 32.9-10.7zM344 240c-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm149.3 16C505.7 244.2 512 230 512 214.9v-42.1c0-14.7-9.8-28-23.8-31.8l-31.1-10.4c2.3-5.8 3.7-12 4.6-18.3l27.1-7.2c13.8-3.7 23.8-17.1 23.8-31.8V68.1c0-15.8-9-30.3-22-39.2L361.6 42.2c-10-6.4-21.7-9.9-34.1-9.9-19.7 0-36.8 9.8-42.7 26.8l-9.1 27.2c-7-3.4-14.8-5.1-22.8-5.1-23.1 0-41.4 17.4-46.3 40.1l-10.4 31.1C280.9 145.8 264.7 144 248 144c-25 0-46.3 3.9-64.2 16.1C172.1 168.9 160 183.1 160 200v47.9c0 14.7 9.8 28 23.8 31.8l31.1 10.4c-2.3 5.8-3.7 12-4.6 18.3l-27.1 7.2c-13.8 3.7-23.8 17.1-23.8 31.8v42.1c0 14.7 9.8 28 23.8 31.8l31.1 10.4c-2.3 5.8-3.7 12-4.6 18.3l-27.1 7.2c-13.8 3.7-23.8 17.1-23.8 31.8v13.3c0 13.3 10.8 24.8 24.1 24.8h10.4c13.3 0 24.1-11.5 24.1-24.8v-13.3c0-14.7-9.8-28-23.8-31.8l-31.1-10.4c2.3-5.8 3.7-12 4.6-18.3l27.1-7.2c13.8-3.7 23.8-17.1 23.8-31.8v-42.1c0-14.7-9.8-28-23.8-31.8l-31.1-10.4c2.3-5.8 3.7-12 4.6-18.3l27.1-7.2c13.8-3.7 23.8-17.1 23.8-31.8V200c0-9.8-5-18.9-13.4-24.2l-31.1-19.3c8.8-12.3 14.8-26.4 17.7-41.5l23.5 7.8c13.8 4.6 28.3-2.9 32.9-16.7l23.5-69.8c8.8-26.1 35.9-42.1 62-33.2l23.5 7.8c12 4 25.4-0.4 32.9-10.7 7.4-10.2 10.7-22.5 9.1-34.6-1.6-12.1-7.9-23-17.4-30.8z"></path>
       </svg>
     );
@@ -562,7 +562,7 @@
       // --- SVG Icons (Sized for the footer) ---
       const LinkedInIcon = () => (
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+          <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
         </svg>
       );
 
