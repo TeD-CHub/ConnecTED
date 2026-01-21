@@ -42,7 +42,7 @@ function PortfolioPage() {
                                 <span className="text-sm font-semibold text-primary-accent">Custom Software, Food Industry</span>
                                 <h3 className="text-xl font-semibold font-display text-primary-blue my-2">Automated Inventory System</h3>
                                 <p className="text-gray-600 mb-4">Developed a custom inventory tool for a regional food distributor to reduce waste and automate ordering.</p>
-                                <a href="/case-study-inventory-system.html" className="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">View Case Study &rarr;</a>
+                                <a href="/case-study-inventory-system" className="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">View Case Study &rarr;</a>
                             </div>
                         </div>
 
@@ -53,7 +53,7 @@ function PortfolioPage() {
                                 <span className="text-sm font-semibold text-primary-accent">Web Development, Non-Profit</span>
                                 <h3 className="text-xl font-semibold font-display text-primary-blue my-2">Donor Management Portal</h3>
                                 <p className="text-gray-600 mb-4">Built a secure web portal for a non-profit to manage donations and communicate with supporters.</p>
-                                <a href="/case-study-donor-portal.html" className="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">View Case Study &rarr;</a>
+                                <a href="/case-study-donor-portal" className="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">View Case Study &rarr;</a>
                             </div>
                         </div>
 

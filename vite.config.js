@@ -15,6 +15,8 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 portfolio: resolve(__dirname, 'portfolio.html'),
                 contact: resolve(__dirname, 'contact.html'),
+                'case-study-inventory': resolve(__dirname, 'case-study-inventory-system.html'),
+                'case-study-donor': resolve(__dirname, 'case-study-donor-portal.html'),
             },
         },
     },
