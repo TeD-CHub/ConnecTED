@@ -57,7 +57,7 @@ function HeroSection() {
             <picture className="absolute inset-0 w-full h-full">
                 <img src="/images/hero.jpeg" alt="Team collaborating" className="absolute inset-0 w-full h-full object-cover" />
             </picture>
-            <div className="absolute inset-0 bg-black opacity-60"></div>
+            <div className="absolute inset-0 bg-black opacity-60 pointer-events-none"></div>
 
             <div className="relative z-10 container mx-auto px-6 text-center">
                 <h1 className="text-4xl md:text-6xl font-bold font-display text-white mb-5">

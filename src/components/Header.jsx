@@ -58,7 +58,7 @@ export default function Header({ activePage }) {
 
             {/* Mobile Menu */}
             <div
-                className={`md:hidden transition-all duration-300 ease-out absolute top-full left-0 w-full bg-white shadow-lg overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                className={`md:hidden transition-all duration-300 ease-out absolute top-full left-0 w-full bg-white shadow-lg overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100 visible pointer-events-auto' : 'max-h-0 opacity-0 invisible pointer-events-none'}`}
             >
                 <a href="/" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Home</a>
                 <a href="/#about" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">About</a>
