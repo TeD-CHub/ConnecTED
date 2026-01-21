@@ -29,12 +29,12 @@ export default function Header({ activePage }) {
                     <a href="/" className={getLinkClass('home')}>Home</a>
                     <a href="/#about" className={getLinkClass('about')}>About</a>
                     <a href="/#services" className={getLinkClass('services')}>Services</a>
-                    <a href="/portfolio.html" className={getLinkClass('portfolio')}>Portfolio</a>
-                    <a href="/contact.html" className={getLinkClass('contact')}>Contact</a>
+                    <a href="/portfolio" className={getLinkClass('portfolio')}>Portfolio</a>
+                    <a href="/contact" className={getLinkClass('contact')}>Contact</a>
                 </div>
 
                 <a
-                    href="/contact.html#quote"
+                    href="/contact#quote"
                     className="hidden md:block bg-primary-accent text-white px-5 py-2 rounded-full font-semibold hover:bg-cyan-600 transition duration-300"
                 >
                     Request a Quote
@@ -63,9 +63,9 @@ export default function Header({ activePage }) {
                 <a href="/" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Home</a>
                 <a href="/#about" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">About</a>
                 <a href="/#services" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Services</a>
-                <a href="/portfolio.html" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Portfolio</a>
-                <a href="/contact.html" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Contact</a>
-                <a href="/contact.html#quote" className="block px-6 py-4 text-primary-accent font-semibold hover:bg-light-bg">Request a Quote</a>
+                <a href="/portfolio" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Portfolio</a>
+                <a href="/contact" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Contact</a>
+                <a href="/contact#quote" className="block px-6 py-4 text-primary-accent font-semibold hover:bg-light-bg">Request a Quote</a>
             </div>
         </header>
     );

@@ -95,10 +95,10 @@ function ServiceCard({ icon, title, desc, link }) {
 
 function ServicesOverview() {
     const services = [
-        { id: 1, icon: <FaLaptopCode />, title: "Custom Software Development", desc: "Build the exact tool you need. Scalable, secure, and efficient.", link: "/software-development.html" },
-        { id: 2, icon: <FaCode />, title: "Web Development", desc: "Modern digital experiences that engage your audience.", link: "/web-development.html" },
-        { id: 3, icon: <FaMobileAlt />, title: "App Development", desc: "High-performance native and cross-platform mobile applications.", link: "/app-development.html" },
-        { id: 4, icon: <FaUserTie />, title: "Tech Consulting", desc: "Strategic guidance to solve your toughest challenges.", link: "/consulting.html" },
+        { id: 1, icon: <FaLaptopCode />, title: "Custom Software Development", desc: "Build the exact tool you need. Scalable, secure, and efficient.", link: "/software-development" },
+        { id: 2, icon: <FaCode />, title: "Web Development", desc: "Modern digital experiences that engage your audience.", link: "/web-development" },
+        { id: 3, icon: <FaMobileAlt />, title: "App Development", desc: "High-performance native and cross-platform mobile applications.", link: "/app-development" },
+        { id: 4, icon: <FaUserTie />, title: "Tech Consulting", desc: "Strategic guidance to solve your toughest challenges.", link: "/consulting" },
     ];
 
     return (
