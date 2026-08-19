@@ -10,8 +10,9 @@ export default {
         'light-bg': '#F4F7F9',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Montserrat', 'system-ui', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', 'Montserrat', 'system-ui', 'sans-serif'],
+        mono: ['"Space Mono"', 'Fira Code', 'monospace'],
       }
     },
   },
