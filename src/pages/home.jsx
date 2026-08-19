@@ -162,18 +162,6 @@ function App() {
                         </div>
                     </section>
                 </AnimateOnScroll>
-                {/* ... Other sections would go here, simplified for brevity but you should render them all ... */}
-                <AnimateOnScroll>
-                    <section className="bg-white py-20">
-                        <div className="container mx-auto px-6 text-center">
-                            <h2 className="text-3xl md:text-4xl font-bold font-display text-primary-text mb-4">See Our Work in Action</h2>
-                            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
-                                We don't just build solutions; we build results.
-                            </p>
-                            <a href="/portfolio.html" className="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 transition duration-300 transform hover:scale-105">View Our Portfolio</a>
-                        </div>
-                    </section>
-                </AnimateOnScroll>
             </main>
             <Footer />
         </>
