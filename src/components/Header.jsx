@@ -5,9 +5,18 @@ export default function Header({ activePage }) {
 
     // Helper to determine link classes
     const getLinkClass = (page) => {
-        const baseClass = "text-gray-600 hover:text-primary-blue font-medium";
-        const activeClass = "text-primary-blue font-semibold";
+        const baseClass = "text-gray-600 hover:text-primary-blue font-medium transition duration-300";
+        const activeClass = "text-primary-accent font-semibold font-mono";
         return activePage === page ? activeClass : baseClass;
+    };
+
+    const renderLink = (page, label, href) => {
+        const isActive = activePage === page;
+        return (
+            <a href={href} className={getLinkClass(page)}>
+                {isActive ? `[ ${label.toLowerCase()} ]` : label}
+            </a>
+        );
     };
 
     return (
@@ -25,17 +34,17 @@ export default function Header({ activePage }) {
                     <span className="font-bold text-2xl text-[#0A2A4E]">ConnecTED</span>
                 </a>
 
-                <div className="hidden md:flex space-x-8">
-                    <a href="/" className={getLinkClass('home')}>Home</a>
-                    <a href={activePage === 'home' ? '#about' : '/#about'} className={getLinkClass('about')}>About</a>
-                    <a href={activePage === 'home' ? '#services' : '/#services'} className={getLinkClass('services')}>Services</a>
-                    <a href="/portfolio" className={getLinkClass('portfolio')}>Portfolio</a>
-                    <a href="/contact" className={getLinkClass('contact')}>Contact</a>
+                <div className="hidden md:flex space-x-8 items-center">
+                    {renderLink('home', 'Home', '/')}
+                    {renderLink('about', 'About', activePage === 'home' ? '#about' : '/#about')}
+                    {renderLink('services', 'Services', activePage === 'home' ? '#services' : '/#services')}
+                    {renderLink('portfolio', 'Portfolio', '/portfolio')}
+                    {renderLink('contact', 'Contact', '/contact')}
                 </div>
 
                 <a
                     href="/contact#quote"
-                    className="hidden md:block bg-primary-accent text-white px-5 py-2 rounded-full font-semibold hover:bg-cyan-600 transition duration-300"
+                    className="hidden md:block bg-primary-accent text-white px-5 py-2 rounded-full font-semibold hover:bg-cyan-600 hover:shadow-[0_0_20px_rgba(0,191,255,0.4)] transition duration-300"
                 >
                     Request a Quote
                 </a>

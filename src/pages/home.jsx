@@ -53,11 +53,15 @@ function HeroSection() {
     }, []);
 
     return (
-        <section id="home" className="relative flex items-center justify-center min-h-[500px] md:min-h-[700px] lg:min-h-[80vh]">
+        <section id="home" className="relative flex items-center justify-center min-h-[500px] md:min-h-[700px] lg:min-h-[80vh] overflow-hidden">
             <picture className="absolute inset-0 w-full h-full">
                 <img src="/images/hero.jpeg" alt="Team collaborating" className="absolute inset-0 w-full h-full object-cover" />
             </picture>
             <div className="absolute inset-0 bg-black opacity-60 pointer-events-none"></div>
+
+            {/* Ambient glows */}
+            <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary-accent/15 rounded-full blur-[100px] pointer-events-none"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
             <div className="relative z-10 container mx-auto px-6 text-center">
                 <h1 className="text-4xl md:text-6xl font-bold font-display text-white mb-5">
@@ -82,7 +86,10 @@ function HeroSection() {
 
 function ServiceCard({ icon, code, title, desc, link }) {
     return (
-        <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:border-primary-accent hover:shadow-[0_0_20px_rgba(0,191,255,0.15)] hover:-translate-y-1 relative overflow-hidden">
+        <div className="group bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:border-primary-accent hover:shadow-[0_0_20px_rgba(0,191,255,0.15)] hover:-translate-y-1 relative overflow-hidden">
+            {/* Laser scanner element */}
+            <div className="laser-scanner absolute left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+
             <div className="font-mono text-[10px] text-gray-400 mb-4 tracking-wider">{code}</div>
             <div className="text-primary-accent mb-4 text-4xl">{icon}</div>
             <h3 className="text-xl font-semibold font-display text-primary-blue mb-3">{title}</h3>
@@ -116,6 +123,88 @@ function ServicesOverview() {
 }
 
 
+function InteractiveTerminal() {
+    const [history, setHistory] = useState([
+        { type: 'input', text: 'connected init --client "Soccer Africa"' },
+        { type: 'comment', text: '// Bootstrapping mobile academy app...' },
+        { type: 'success', text: '[✔] Core Performance Engine loaded' },
+        { type: 'success', text: '[✔] Offline synchronization service ready' },
+        { type: 'input', text: 'connected deploy --production' },
+        { type: 'warn', text: 'Uploading static assets & PWA configuration...' },
+        { type: 'info', text: '[SUCCESS] Project is live at soccerafricaint.com' }
+    ]);
+    const [inputValue, setInputValue] = useState('');
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            const command = inputValue.trim().toLowerCase();
+            const newHistory = [...history, { type: 'input', text: inputValue }];
+
+            if (command === 'help') {
+                newHistory.push({ type: 'output', text: 'Available commands: services, status, clear, help' });
+            } else if (command === 'services') {
+                newHistory.push({ type: 'output', text: 'Solutions: Custom Software, Web Dev, Mobile Apps, Consulting' });
+            } else if (command === 'status') {
+                newHistory.push({ type: 'output', text: 'System: Active | Latency: 42ms | Deployments: Stable' });
+            } else if (command === 'clear') {
+                setHistory([]);
+                setInputValue('');
+                return;
+            } else if (command === '') {
+                // Do nothing
+            } else {
+                newHistory.push({ type: 'error', text: `Command not found: ${inputValue}. Type "help" for a list of commands.` });
+            }
+
+            setHistory(newHistory);
+            setInputValue('');
+        }
+    };
+
+    return (
+        <div className="w-full rounded-lg overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl font-mono text-left text-xs md:text-sm">
+            {/* Terminal Header */}
+            <div className="flex items-center space-x-2 px-4 py-3 bg-slate-900 border-b border-slate-950">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="text-slate-500 text-xs pl-2">connected-cli.sh</span>
+            </div>
+            {/* Terminal Content */}
+            <div className="p-5 space-y-2 text-slate-300 max-h-64 overflow-y-auto">
+                {history.map((line, idx) => {
+                    if (line.type === 'input') {
+                        return <p key={idx}><span className="text-cyan-400">$</span> {line.text}</p>;
+                    } else if (line.type === 'comment') {
+                        return <p key={idx} className="text-slate-500">{line.text}</p>;
+                    } else if (line.type === 'success') {
+                        return <p key={idx} className="text-emerald-400">{line.text}</p>;
+                    } else if (line.type === 'warn') {
+                        return <p key={idx} className="text-yellow-400">{line.text}</p>;
+                    } else if (line.type === 'info') {
+                        return <p key={idx} className="text-emerald-500 font-bold">{line.text}</p>;
+                    } else if (line.type === 'error') {
+                        return <p key={idx} className="text-red-400">{line.text}</p>;
+                    } else {
+                        return <p key={idx} className="text-gray-400">{line.text}</p>;
+                    }
+                })}
+                <div className="flex items-center gap-2">
+                    <span className="text-cyan-400 shrink-0">$</span>
+                    <input
+                        type="text"
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        className="bg-transparent text-slate-200 outline-none w-full border-none p-0 focus:ring-0"
+                        placeholder="Type 'help'..."
+                    />
+                </div>
+            </div>
+        </div>
+    );
+}
+
 function App() {
     return (
         <>
@@ -139,25 +228,7 @@ function App() {
                                         Whether you are a startup needing a rapid prototype or an established business seeking workflow automation, our engineering pipeline is designed to build and scale your ideas efficiently.
                                     </p>
                                 </div>
-                                <div className="w-full rounded-lg overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl font-mono text-left text-xs md:text-sm">
-                                    {/* Terminal Header */}
-                                    <div className="flex items-center space-x-2 px-4 py-3 bg-slate-900 border-b border-slate-950">
-                                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                                        <span className="text-slate-500 text-xs pl-2">connected-cli.sh</span>
-                                    </div>
-                                    {/* Terminal Content */}
-                                    <div className="p-5 space-y-2 text-slate-300">
-                                        <p><span className="text-cyan-400">$</span> connected init --client "Soccer Africa"</p>
-                                        <p className="text-slate-500">// Bootstrapping mobile academy app...</p>
-                                        <p className="text-emerald-400">[✔] Core Performance Engine loaded</p>
-                                        <p className="text-emerald-400">[✔] Offline synchronization service ready</p>
-                                        <p><span className="text-cyan-400">$</span> connected deploy --production</p>
-                                        <p className="text-yellow-400">Uploading static assets & PWA configuration...</p>
-                                        <p className="text-emerald-500 font-bold">[SUCCESS] Project is live at soccerafricaint.com</p>
-                                    </div>
-                                </div>
+                                <InteractiveTerminal />
                             </div>
                         </div>
                     </section>
