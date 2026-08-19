@@ -39,9 +39,9 @@ function PortfolioPage() {
                         <div className="bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1">
                             <img src="/images/SoccerAfrica.jpg" alt="Soccer Africa" className="w-full h-48 object-cover" loading="lazy" />
                             <div className="p-6">
-                                <span className="text-sm font-semibold text-primary-accent">Web & App Development, Sports Tech</span>
+                                <span className="text-sm font-semibold text-primary-accent">Web & App Development, Sports Academy</span>
                                 <h3 className="text-xl font-semibold font-display text-primary-blue my-2">Soccer Africa</h3>
-                                <p className="text-gray-600 mb-4">A comprehensive digital sports platform providing real-time scores, match statistics, player analytics, and news coverage of leagues across the African continent.</p>
+                                <p className="text-gray-600 mb-4">A custom web and mobile platform built for Soccer Africa Football Academy to manage youth training programs, track player performance, schedule sessions, and handle school partnerships.</p>
                                 <a href="https://soccerafricaint.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">Visit Website &rarr;</a>
                             </div>
                         </div>
