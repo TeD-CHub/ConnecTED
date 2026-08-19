@@ -27,8 +27,8 @@ export default function Header({ activePage }) {
 
                 <div className="hidden md:flex space-x-8">
                     <a href="/" className={getLinkClass('home')}>Home</a>
-                    <a href="/#about" className={getLinkClass('about')}>About</a>
-                    <a href="/#services" className={getLinkClass('services')}>Services</a>
+                    <a href={activePage === 'home' ? '#about' : '/#about'} className={getLinkClass('about')}>About</a>
+                    <a href={activePage === 'home' ? '#services' : '/#services'} className={getLinkClass('services')}>Services</a>
                     <a href="/portfolio" className={getLinkClass('portfolio')}>Portfolio</a>
                     <a href="/contact" className={getLinkClass('contact')}>Contact</a>
                 </div>
@@ -61,8 +61,8 @@ export default function Header({ activePage }) {
                 className={`md:hidden transition-all duration-300 ease-out absolute top-full left-0 w-full bg-white shadow-lg overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100 visible pointer-events-auto' : 'max-h-0 opacity-0 invisible pointer-events-none'}`}
             >
                 <a href="/" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Home</a>
-                <a href="/#about" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">About</a>
-                <a href="/#services" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Services</a>
+                <a href={activePage === 'home' ? '#about' : '/#about'} className="block px-6 py-4 text-gray-600 hover:bg-light-bg">About</a>
+                <a href={activePage === 'home' ? '#services' : '/#services'} className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Services</a>
                 <a href="/portfolio" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Portfolio</a>
                 <a href="/contact" className="block px-6 py-4 text-gray-600 hover:bg-light-bg">Contact</a>
                 <a href="/contact#quote" className="block px-6 py-4 text-primary-accent font-semibold hover:bg-light-bg">Request a Quote</a>

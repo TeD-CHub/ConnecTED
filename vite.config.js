@@ -54,8 +54,6 @@ export default defineConfig({
                 'web-development': resolve(__dirname, 'web-development.html'),
                 'app-development': resolve(__dirname, 'app-development.html'),
                 consulting: resolve(__dirname, 'consulting.html'),
-                'case-study-inventory-system': resolve(__dirname, 'case-study-inventory-system.html'),
-                'case-study-donor-portal': resolve(__dirname, 'case-study-donor-portal.html'),
             },
         },
     },
