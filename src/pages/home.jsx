@@ -122,12 +122,41 @@ function App() {
                 <HeroSection />
                 <AnimateOnScroll><ServicesOverview /></AnimateOnScroll>
                 <AnimateOnScroll>
-                    <section id="about" className="bg-primary-blue text-white py-20">
-                        <div className="container mx-auto px-6 text-center">
-                            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">Your Timely & Reliable Tech Partner</h2>
-                            <p className="text-lg text-gray-200 max-w-3xl mx-auto">
-                                We built ConnecTED on a foundation of trust. We respect your deadlines, communicate clearly, and deliver robust solutions.
-                            </p>
+                    <section id="about" className="bg-primary-blue text-white py-20 relative overflow-hidden">
+                        {/* Grid overlay */}
+                        <div className="absolute inset-0 bg-tech-grid opacity-[0.05] pointer-events-none"></div>
+                        <div className="container mx-auto px-6 relative z-10">
+                            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                                <div className="text-left">
+                                    <span className="font-mono text-xs uppercase tracking-widest text-cyan-400">// ABOUT_US</span>
+                                    <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 mt-2">Your Timely & Reliable Tech Partner</h2>
+                                    <p className="text-lg text-gray-200 mb-6">
+                                        We built ConnecTED on a foundation of trust. We respect your deadlines, communicate clearly, and deliver robust, production-ready solutions.
+                                    </p>
+                                    <p className="text-base text-gray-300">
+                                        Whether you are a startup needing a rapid prototype or an established business seeking workflow automation, our engineering pipeline is designed to build and scale your ideas efficiently.
+                                    </p>
+                                </div>
+                                <div className="w-full rounded-lg overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl font-mono text-left text-xs md:text-sm">
+                                    {/* Terminal Header */}
+                                    <div className="flex items-center space-x-2 px-4 py-3 bg-slate-900 border-b border-slate-950">
+                                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                                        <span className="text-slate-500 text-xs pl-2">connected-cli.sh</span>
+                                    </div>
+                                    {/* Terminal Content */}
+                                    <div className="p-5 space-y-2 text-slate-300">
+                                        <p><span className="text-cyan-400">$</span> connected init --client "Soccer Africa"</p>
+                                        <p className="text-slate-500">// Bootstrapping mobile academy app...</p>
+                                        <p className="text-emerald-400">[✔] Core Performance Engine loaded</p>
+                                        <p className="text-emerald-400">[✔] Offline synchronization service ready</p>
+                                        <p><span className="text-cyan-400">$</span> connected deploy --production</p>
+                                        <p className="text-yellow-400">Uploading static assets & PWA configuration...</p>
+                                        <p className="text-emerald-500 font-bold">[SUCCESS] Project is live at soccerafricaint.com</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </AnimateOnScroll>

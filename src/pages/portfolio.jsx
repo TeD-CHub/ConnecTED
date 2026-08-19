@@ -22,8 +22,12 @@ function PortfolioPage() {
     return (
         <>
             <Header activePage="portfolio" />
-            <main className="py-20 bg-light-bg">
-                <div className="container mx-auto px-6">
+            <main className="relative py-20 bg-light-bg bg-tech-dots overflow-hidden">
+                {/* Glow backdrop circles */}
+                <div className="absolute top-20 left-10 w-72 h-72 bg-primary-accent/10 rounded-full blur-[80px] pointer-events-none"></div>
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-blue/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+                <div className="container mx-auto px-6 relative z-10">
 
                     <section className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold font-display text-primary-text mb-4">
@@ -34,15 +38,24 @@ function PortfolioPage() {
                         </p>
                     </section>
 
+                    {/* Monospace Code Comment Header */}
+                    <div className="font-mono text-xs text-gray-500 mb-6 tracking-widest flex items-center gap-2">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        // 01. ACTIVE_DEPLOYMENTS (COUNT: 01)
+                    </div>
+
                     <section id="projects" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Soccer Africa */}
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:border-primary-accent hover:shadow-[0_0_25px_rgba(0,191,255,0.22)] hover:-translate-y-1">
                             <img src="/images/SoccerAfrica.jpg" alt="Soccer Africa" className="w-full h-48 object-contain p-4 bg-gray-50 border-b border-gray-100" loading="lazy" />
                             <div className="p-6">
-                                <span className="text-sm font-semibold text-primary-accent">Web & App Development, Sports Academy</span>
+                                <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-primary-accent bg-cyan-950/5 px-2 py-1 rounded inline-block mb-3">// CAT: ACADEMY_APP</span>
                                 <h3 className="text-xl font-semibold font-display text-primary-blue my-2">Soccer Africa</h3>
                                 <p className="text-gray-600 mb-4">A custom web and mobile platform built for Soccer Africa Football Academy to manage youth training programs, track player performance, schedule sessions, and handle school partnerships.</p>
-                                <a href="https://soccerafricaint.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">Visit Website &rarr;</a>
+                                <a href="https://soccerafricaint.com" target="_blank" rel="noopener noreferrer" className="font-mono font-semibold text-sm text-primary-accent hover:text-cyan-600 transition duration-300 flex items-center gap-1">visit_site() &rarr;</a>
                             </div>
                         </div>
                     </section>
