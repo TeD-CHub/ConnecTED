@@ -37,7 +37,7 @@ function PortfolioPage() {
                     <section id="projects" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Soccer Africa */}
                         <div className="bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1">
-                            <img src="/images/SoccerAfrica.jpg" alt="Soccer Africa" className="w-full h-48 object-cover" loading="lazy" />
+                            <img src="/images/SoccerAfrica.jpg" alt="Soccer Africa" className="w-full h-48 object-contain p-4 bg-gray-50 border-b border-gray-100" loading="lazy" />
                             <div className="p-6">
                                 <span className="text-sm font-semibold text-primary-accent">Web & App Development, Sports Academy</span>
                                 <h3 className="text-xl font-semibold font-display text-primary-blue my-2">Soccer Africa</h3>
