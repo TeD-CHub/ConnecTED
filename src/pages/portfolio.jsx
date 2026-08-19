@@ -47,18 +47,28 @@ function PortfolioPage() {
                         // 01. ACTIVE_DEPLOYMENTS (COUNT: 01)
                     </div>
 
-                    <section id="projects" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Soccer Africa */}
-                        <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:border-primary-accent hover:shadow-[0_0_25px_rgba(0,191,255,0.22)] hover:-translate-y-1">
-                            <img src="/images/SoccerAfrica.jpg" alt="Soccer Africa" className="w-full h-48 object-contain p-4 bg-gray-50 border-b border-gray-100" loading="lazy" />
-                            <div className="p-6">
-                                <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-primary-accent bg-cyan-950/5 px-2 py-1 rounded inline-block mb-3">// CAT: ACADEMY_APP</span>
-                                <h3 className="text-xl font-semibold font-display text-primary-blue my-2">Soccer Africa</h3>
-                                <p className="text-gray-600 mb-4">A custom web and mobile platform built for Soccer Africa Football Academy to manage youth training programs, track player performance, schedule sessions, and handle school partnerships.</p>
+                    <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:border-primary-accent hover:shadow-[0_0_25px_rgba(0,191,255,0.22)] hover:-translate-y-1 flex flex-col md:flex-row">
+                        {/* Left Side: Logo Box */}
+                        <div className="md:w-1/2 bg-gray-50 flex items-center justify-center p-8 border-b md:border-b-0 md:border-r border-gray-100">
+                            <img src="/images/SoccerAfrica.jpg" alt="Soccer Africa" className="max-h-48 object-contain rounded-lg transition-transform duration-500 hover:scale-105" loading="lazy" />
+                        </div>
+                        {/* Right Side: Details */}
+                        <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                            <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-primary-accent bg-cyan-950/5 px-2.5 py-1 rounded inline-block mb-3 w-fit">// CAT: ACADEMY_PLATFORM</span>
+                            <h3 className="text-2xl font-bold font-display text-primary-blue mb-3">Soccer Africa</h3>
+                            <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                                A custom web and mobile platform built for Soccer Africa Football Academy to manage youth training programs, track player performance, schedule sessions, and handle school partnerships.
+                            </p>
+                            <ul className="list-disc list-inside text-xs text-gray-500 space-y-1 mb-6 leading-relaxed">
+                                <li>Parent & Coach dashboard panels</li>
+                                <li>Offline-first local data syncing</li>
+                                <li>Real-time scoreboards and match results</li>
+                            </ul>
+                            <div>
                                 <a href="https://soccerafricaint.com" target="_blank" rel="noopener noreferrer" className="font-mono font-semibold text-sm text-primary-accent hover:text-cyan-600 transition duration-300 flex items-center gap-1">visit_site() &rarr;</a>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
                     <section id="contact" className="bg-white py-20 mt-20 rounded-lg shadow-lg">
                         <div className="container mx-auto px-6 text-center">

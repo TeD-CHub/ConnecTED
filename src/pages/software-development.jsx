@@ -28,9 +28,10 @@ function SoftwareDevelopmentPage() {
         <>
             <Header activePage="services" />
             <main>
-                <section className="bg-primary-blue text-white py-20">
-                    <div className="container mx-auto px-6 text-center">
-                        <span className="text-primary-accent font-semibold">Our Services</span>
+                <section className="bg-primary-blue text-white py-20 relative overflow-hidden border-b border-cyan-900/30">
+                    <div className="absolute inset-0 bg-tech-grid opacity-[0.05] pointer-events-none"></div>
+                    <div className="container mx-auto px-6 text-center relative z-10">
+                        <span className="text-primary-accent font-semibold font-mono text-xs uppercase tracking-widest">// Our Services</span>
                         <h1 className="text-4xl md:text-5xl font-bold font-display mt-2">
                             Custom Software Development
                         </h1>

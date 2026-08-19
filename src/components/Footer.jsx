@@ -75,8 +75,21 @@ export default function Footer() {
                     </div>
 
                 </div>
-                <div className="text-center text-gray-500 border-t border-gray-700 mt-10 pt-8">
-                    © {new Date().getFullYear()} ConnecTED. All rights reserved.
+                <div className="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-500">
+                    <div className="flex items-center gap-6">
+                        <span className="flex items-center gap-2">
+                            <span className="relative flex h-1.5 w-1.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                            </span>
+                            STATUS: [ ONLINE ]
+                        </span>
+                        <span>ENV: [ PRODUCTION ]</span>
+                        <span>VERSION: [ v1.2.0 ]</span>
+                    </div>
+                    <div className="font-sans">
+                        © {new Date().getFullYear()} ConnecTED. All rights reserved.
+                    </div>
                 </div>
             </div>
         </footer>
