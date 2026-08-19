@@ -114,6 +114,37 @@ function ServicesOverview() {
     );
 }
 
+
+function FeaturedProject() {
+    return (
+        <section className="py-20 bg-white border-t border-gray-100 relative overflow-hidden">
+            <div className="absolute top-10 right-10 w-64 h-64 bg-primary-accent/5 rounded-full blur-[80px] pointer-events-none"></div>
+            <div className="container mx-auto px-6 relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold font-display text-center text-primary-text mb-4">Latest Success Story</h2>
+                <p className="text-lg text-center text-gray-700 mb-12 max-w-2xl mx-auto">See how we partner with our clients to deliver real, production-ready impact.</p>
+                
+                <div className="max-w-4xl mx-auto bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-slate-800 flex flex-col md:flex-row transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,191,255,0.15)] hover:border-slate-700">
+                    <div className="md:w-1/2 bg-slate-950 flex items-center justify-center p-8 border-b md:border-b-0 md:border-r border-slate-800">
+                        <img src="/images/SoccerAfrica.jpg" alt="Soccer Africa Logo" className="max-h-48 object-contain rounded-lg transition-transform duration-500 hover:scale-105" />
+                    </div>
+                    <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                        <span className="font-mono text-xs text-primary-accent tracking-widest uppercase">// FEATURED_CASE_STUDY</span>
+                        <h3 className="text-2xl font-bold font-display mt-2 mb-3">Soccer Africa App</h3>
+                        <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                            We designed and deployed a custom mobile and web platform for Soccer Africa Football Academy to manage youth training programs, track stats, and automate program scheduling across regional schools.
+                        </p>
+                        <div>
+                            <a href="/portfolio" className="inline-flex items-center gap-2 bg-primary-accent text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-cyan-600 transition duration-300 transform hover:scale-105">
+                                View in Portfolio &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
 function App() {
     return (
         <>
@@ -121,6 +152,7 @@ function App() {
             <main>
                 <HeroSection />
                 <AnimateOnScroll><ServicesOverview /></AnimateOnScroll>
+                <AnimateOnScroll><FeaturedProject /></AnimateOnScroll>
                 <AnimateOnScroll>
                     <section id="about" className="bg-primary-blue text-white py-20 relative overflow-hidden">
                         {/* Grid overlay */}

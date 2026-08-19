@@ -8,6 +8,28 @@ import '../index.css';
 function ContactPage() {
     const el = useRef(null);
 
+    // Accordion FAQ Item Component
+    const FAQItem = ({ question, answer }) => {
+        const [isOpen, setIsOpen] = React.useState(false);
+        return (
+            <div className="border-b border-gray-250 py-4">
+                <button 
+                    onClick={() => setIsOpen(!isOpen)} 
+                    className="flex justify-between items-center w-full text-left font-semibold text-primary-text hover:text-primary-accent transition duration-300 focus:outline-none"
+                    type="button"
+                >
+                    <span className="pr-4">{question}</span>
+                    <svg className={`h-5 w-5 text-gray-400 shrink-0 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div className={`transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                    <p className="pb-2 text-gray-600 text-sm md:text-base leading-relaxed">{answer}</p>
+                </div>
+            </div>
+        );
+    };
+
     useEffect(() => {
         const typed = new Typed(el.current, {
             strings: ["Let's Get Started"],
@@ -87,20 +109,20 @@ function ContactPage() {
 
                     <section id="faq" className="py-12">
                         <div className="container mx-auto px-6 max-w-3xl">
-                            <h2 className="text-2xl font-bold font-display text-primary-text mb-4">Frequently Asked Questions</h2>
-                            <div className="space-y-6">
-                                <div>
-                                    <h3 className="font-semibold">How long does it take to receive a quote?</h3>
-                                    <p className="text-gray-700">We typically respond with a preliminary quote or next steps within 1–3 business days depending on project scope.</p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold">What information should I include when requesting a quote?</h3>
-                                    <p className="text-gray-700">Provide a brief project overview, desired features, target platforms, and any timelines or budget ranges you have in mind.</p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold">Do you sign NDAs for sensitive projects?</h3>
-                                    <p className="text-gray-700">Yes — we’re happy to sign an NDA prior to discussing confidential details.</p>
-                                </div>
+                            <h2 className="text-2xl font-bold font-display text-primary-text mb-6">Frequently Asked Questions</h2>
+                            <div className="space-y-2">
+                                <FAQItem 
+                                    question="How long does it take to receive a quote?" 
+                                    answer="We typically respond with a preliminary quote or next steps within 1–3 business days depending on project scope." 
+                                />
+                                <FAQItem 
+                                    question="What information should I include when requesting a quote?" 
+                                    answer="Provide a brief project overview, desired features, target platforms, and any timelines or budget ranges you have in mind." 
+                                />
+                                <FAQItem 
+                                    question="Do you sign NDAs for sensitive projects?" 
+                                    answer="Yes — we’re happy to sign an NDA prior to discussing confidential details." 
+                                />
                             </div>
                         </div>
                     </section>

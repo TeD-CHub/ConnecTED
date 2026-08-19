@@ -97,6 +97,15 @@ function SoftwareDevelopmentPage() {
                                         <span><strong>Cloud Deployment</strong> & Management (Vercel, AWS, etc.)</span>
                                     </li>
                                 </ul>
+                                <h3 className="text-xl font-bold font-display text-primary-blue mb-4 mt-8 border-t border-gray-200 pt-6">Technologies We Use</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// React</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// Node.js</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// Vite</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// PostgreSQL</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// Tailwind</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// AWS</span>
+                                </div>
                             </aside>
                         </div>
                     </div>

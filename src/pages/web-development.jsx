@@ -96,6 +96,15 @@ function WebDevelopmentPage() {
                                         <span><strong>Custom Web Applications</strong></span>
                                     </li>
                                 </ul>
+                                <h3 className="text-xl font-bold font-display text-primary-blue mb-4 mt-8 border-t border-gray-200 pt-6">Technologies We Use</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// Next.js</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// React</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// Tailwind</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// TypeScript</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// Sanity.io</span>
+                                    <span className="font-mono text-[10px] px-2.5 py-1 bg-cyan-950/5 text-primary-blue rounded border border-cyan-900/10">// Vercel</span>
+                                </div>
                             </aside>
                         </div>
                     </div>
