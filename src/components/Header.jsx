@@ -24,11 +24,11 @@ export default function Header({ activePage }) {
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center relative">
 
                 <a href="/" className="flex items-center gap-3 group">
-                    <div className="h-10 w-10 shrink-0 rotate-45 overflow-hidden rounded-lg">
+                    <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg">
                         <img
                             src="/images/Logo.png"
-                            alt="ConnecTED Logo"
-                            className="h-full w-full object-cover -rotate-45 scale-[1.42]"
+                            alt="connec[TED] Logo"
+                            className="h-full w-full object-contain"
                         />
                     </div>
                     <span className="font-sans text-2xl text-[#0A2A4E] tracking-tight">
