@@ -23,15 +23,19 @@ export default function Header({ activePage }) {
         <header className="bg-white shadow-sm sticky top-0 z-50">
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center relative">
 
-                <a href="/" className="flex items-center gap-3">
-                    <div className="h-10 w-10 shrink-0 rotate-45 overflow-hidden rounded-lg">
-                        <img
-                            src="/images/Logo.png"
-                            alt="ConnecTED Logo"
-                            className="h-full w-full object-cover -rotate-45 scale-[1.42]"
-                        />
+                <a href="/" className="flex items-center gap-3 group">
+                    {/* CSS Code Node Logomark */}
+                    <div className="flex items-center justify-center relative w-10 h-10 bg-slate-950 border border-slate-800 rounded-lg overflow-hidden shadow-inner shrink-0">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-blue-500/10 group-hover:from-cyan-500/20 group-hover:to-blue-500/20 transition-all duration-300"></div>
+                        <div className="absolute w-2 h-2 bg-primary-accent rounded-full shadow-[0_0_8px_#00BFFF]">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                        </div>
+                        <span className="absolute left-1.5 font-mono text-xs text-cyan-500/80 font-bold select-none">&lt;</span>
+                        <span className="absolute right-1.5 font-mono text-xs text-cyan-500/80 font-bold select-none">/&gt;</span>
                     </div>
-                    <span className="font-bold text-2xl text-[#0A2A4E]">ConnecTED</span>
+                    <span className="font-sans text-2xl text-[#0A2A4E] tracking-tight">
+                        connec<span className="text-primary-accent font-mono font-bold">[TED]</span>
+                    </span>
                 </a>
 
                 <div className="hidden md:flex space-x-8 items-center">

@@ -9,7 +9,9 @@ export default function Footer() {
 
                     {/* Column 1: Brand & Socials */}
                     <div>
-                        <h3 className="text-2xl font-bold font-display text-white mb-3">ConnecTED</h3>
+                        <h3 className="text-2xl font-sans text-white tracking-tight mb-3">
+                            connec<span className="text-primary-accent font-mono font-bold">[TED]</span>
+                        </h3>
                         <p className="text-gray-400 mb-4">Your timely & reliable tech partner.</p>
 
                         <div className="flex space-x-4">
@@ -88,7 +90,7 @@ export default function Footer() {
                         <span>VERSION: [ v1.2.0 ]</span>
                     </div>
                     <div className="font-sans">
-                        © {new Date().getFullYear()} ConnecTED. All rights reserved.
+                        © {new Date().getFullYear()} connec[TED]. All rights reserved.
                     </div>
                 </div>
             </div>

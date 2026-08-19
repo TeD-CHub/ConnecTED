@@ -69,7 +69,7 @@ function HeroSection() {
                     <span className="text-cyan-400" ref={el}></span>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10">
-                    ConnecTED delivers timely, reliable tech solutions that automate your work and grow your business.
+                    connec[TED] delivers timely, reliable tech solutions that automate your work and grow your business.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="/contact.html#quote" className="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 hover:shadow-[0_0_20px_rgba(0,191,255,0.4)] transition duration-300 transform hover:scale-105">
@@ -222,7 +222,7 @@ function App() {
                                     <span className="font-mono text-xs uppercase tracking-widest text-cyan-400">// ABOUT_US</span>
                                     <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 mt-2">Your Timely & Reliable Tech Partner</h2>
                                     <p className="text-lg text-gray-200 mb-6">
-                                        We built ConnecTED on a foundation of trust. We respect your deadlines, communicate clearly, and deliver robust, production-ready solutions.
+                                        We built connec[TED] on a foundation of trust. We respect your deadlines, communicate clearly, and deliver robust, production-ready solutions.
                                     </p>
                                     <p className="text-base text-gray-300">
                                         Whether you are a startup needing a rapid prototype or an established business seeking workflow automation, our engineering pipeline is designed to build and scale your ideas efficiently.
