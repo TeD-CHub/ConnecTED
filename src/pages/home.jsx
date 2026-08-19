@@ -68,7 +68,7 @@ function HeroSection() {
                     ConnecTED delivers timely, reliable tech solutions that automate your work and grow your business.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="/contact.html#quote" className="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 transition duration-300 transform hover:scale-105">
+                    <a href="/contact.html#quote" className="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 hover:shadow-[0_0_20px_rgba(0,191,255,0.4)] transition duration-300 transform hover:scale-105">
                         Request a Quote
                     </a>
                     <a href="/contact.html" className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-primary-text transition duration-300 transform hover:scale-105">
@@ -80,14 +80,15 @@ function HeroSection() {
     );
 }
 
-function ServiceCard({ icon, title, desc, link }) {
+function ServiceCard({ icon, code, title, desc, link }) {
     return (
-        <div className="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:border-primary-accent hover:shadow-[0_0_20px_rgba(0,191,255,0.15)] hover:-translate-y-1 relative overflow-hidden">
+            <div className="font-mono text-[10px] text-gray-400 mb-4 tracking-wider">{code}</div>
             <div className="text-primary-accent mb-4 text-4xl">{icon}</div>
             <h3 className="text-xl font-semibold font-display text-primary-blue mb-3">{title}</h3>
-            <p className="text-gray-600 mb-4">{desc}</p>
-            <a href={link} className="font-semibold text-primary-accent hover:text-cyan-600 transition duration-300">
-                Learn More &rarr;
+            <p className="text-gray-600 mb-4 text-sm leading-relaxed">{desc}</p>
+            <a href={link} className="font-mono font-semibold text-xs text-primary-accent hover:text-cyan-600 transition duration-300 flex items-center gap-1">
+                learn_more() &rarr;
             </a>
         </div>
     );
@@ -95,10 +96,10 @@ function ServiceCard({ icon, title, desc, link }) {
 
 function ServicesOverview() {
     const services = [
-        { id: 1, icon: <FaLaptopCode />, title: "Custom Software Development", desc: "Build the exact tool you need. Scalable, secure, and efficient.", link: "/software-development" },
-        { id: 2, icon: <FaCode />, title: "Web Development", desc: "Modern digital experiences that engage your audience.", link: "/web-development" },
-        { id: 3, icon: <FaMobileAlt />, title: "App Development", desc: "High-performance native and cross-platform mobile applications.", link: "/app-development" },
-        { id: 4, icon: <FaUserTie />, title: "Tech Consulting", desc: "Strategic guidance to solve your toughest challenges.", link: "/consulting" },
+        { id: 1, icon: <FaLaptopCode />, code: "// 01_SOFTWARE_BUILD", title: "Custom Software Development", desc: "Build the exact tool you need. Scalable, secure, and efficient.", link: "/software-development" },
+        { id: 2, icon: <FaCode />, code: "// 02_WEB_INTERFACE", title: "Web Development", desc: "Modern digital experiences that engage your audience.", link: "/web-development" },
+        { id: 3, icon: <FaMobileAlt />, code: "// 03_MOBILE_BUILD", title: "App Development", desc: "High-performance native and cross-platform mobile applications.", link: "/app-development" },
+        { id: 4, icon: <FaUserTie />, code: "// 04_TECH_ARCH", title: "Tech Consulting", desc: "Strategic guidance to solve your toughest challenges.", link: "/consulting" },
     ];
 
     return (

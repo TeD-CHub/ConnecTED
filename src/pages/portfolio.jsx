@@ -70,11 +70,28 @@ function PortfolioPage() {
                         </div>
                     </div>
 
+                    {/* Site Telemetry Panel */}
+                    <div className="max-w-4xl mx-auto mt-16 bg-slate-950 border border-slate-800 rounded-xl p-5 font-mono text-[10px] text-gray-400 flex flex-wrap justify-between items-center gap-4 shadow-lg">
+                        <div className="flex items-center gap-2">
+                            <span className="relative flex h-1.5 w-1.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                            </span>
+                            <span className="text-gray-300">TELEMETRY_LOG: [ ACTIVE ]</span>
+                        </div>
+                        <div className="flex flex-wrap gap-x-6 gap-y-2">
+                            <span>PAGE_LOAD: <span className="text-primary-accent">0.12s</span></span>
+                            <span>HYDRATION: <span className="text-emerald-400">OK</span></span>
+                            <span>ASSETS_CACHED: <span className="text-primary-accent">34 / 34</span></span>
+                            <span>PWA_SYNC: <span className="text-emerald-400">STABLE</span></span>
+                        </div>
+                    </div>
+
                     <section id="contact" className="bg-white py-20 mt-20 rounded-lg shadow-lg">
                         <div className="container mx-auto px-6 text-center">
                             <h2 className="text-3xl md:text-4xl font-bold font-display text-primary-text mb-4">Let's Build Your Next Big Idea.</h2>
                             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                                <a href="/contact.html#quote" className="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 transition duration-300 transform hover:scale-105">Request a Quote</a>
+                                <a href="/contact.html#quote" className="bg-primary-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-cyan-600 hover:shadow-[0_0_20px_rgba(0,191,255,0.4)] transition duration-300 transform hover:scale-105">Request a Quote</a>
                             </div>
                         </div>
                     </section>

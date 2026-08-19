@@ -103,6 +103,24 @@ function ContactPage() {
                                 Book Your Free Consultation
                             </a>
                             <p className="text-sm text-gray-600 mt-4 text-center">You will be redirected to Calendly to pick a time.</p>
+
+                            {/* Geolocation Code Card */}
+                            <div className="mt-12 rounded-xl overflow-hidden bg-slate-950 border border-slate-800 shadow-xl font-mono text-left text-xs max-w-sm mx-auto">
+                                <div className="flex items-center space-x-2 px-4 py-2 bg-slate-900 border-b border-slate-950">
+                                    <span className="text-slate-500 text-[10px]">location_node.js</span>
+                                </div>
+                                <pre className="p-4 text-cyan-400 leading-normal">
+{`const headquarters = {
+  region: "Nairobi, Kenya",
+  coordinates: {
+    lat: -1.2921,
+    lng: 36.8219
+  },
+  timezone: "EAT (UTC+3)",
+  status: "ONLINE"
+};`}
+                                </pre>
+                            </div>
                         </section>
 
                     </div>
